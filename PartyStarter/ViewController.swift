@@ -16,6 +16,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         if(FBSDKAccessToken.currentAccessToken() == nil) {
+            
             print("not logged in..")
         } else {
             print("logged in..")
@@ -43,7 +44,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         if(error == nil) {
             print("login complete..")
-            self.performSegueWithIdentifier("showNew", sender: self)
+         //   self.performSegueWithIdentifier("showNew", sender: self)
         } else {
             print(error.localizedDescription)
         }

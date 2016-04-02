@@ -2,10 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+    		<string>fbauth2</string>
+	</array>
+	
 	<key>FacebookDisplayName</key>
 	<string>PartyStarter</string>
 	<key>FacebookAppID</key>
-	<string>235203153499335FBSDKMessengerShareKit.frameworkFBSDKShareKit.frameworkLICENSE.txt235203153499335</string>
+	<string>235203153499335</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleURLTypes</key>
@@ -14,6 +19,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb235203153499335</string>
+				<string>fbauth2</string>
 			</array>
 		</dict>
 	</array>
