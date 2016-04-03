@@ -17,6 +17,7 @@
 		2FDEAE961CAF045F00E2B0A3 /* PartyStarterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE951CAF045F00E2B0A3 /* PartyStarterUITests.swift */; };
 		2FDEAEA81CAF082E00E2B0A3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */; };
 		2FDEAEAA1CAF084100E2B0A3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */; };
+		82E3E2511CB192B900061C97 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3E2501CB192B900061C97 /* BViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2FDEAE971CAF045F00E2B0A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		82E3E2501CB192B900061C97 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				2FDEAE7E1CAF045F00E2B0A3 /* LaunchScreen.storyboard */,
 				2FDEAE811CAF045F00E2B0A3 /* Info.plist */,
 				2FDEAE791CAF045F00E2B0A3 /* PartyStarter.xcdatamodeld */,
+				82E3E2501CB192B900061C97 /* BViewController.swift */,
 			);
 			path = PartyStarter;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FDEAE7B1CAF045F00E2B0A3 /* PartyStarter.xcdatamodeld in Sources */,
+				82E3E2511CB192B900061C97 /* BViewController.swift in Sources */,
 				2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */,
 				2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */,
 			);
@@ -502,6 +506,7 @@
 				2FDEAE9C1CAF045F00E2B0A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FDEAE9D1CAF045F00E2B0A3 /* Build configuration list for PBXNativeTarget "PartyStarterTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +515,7 @@
 				2FDEAE9F1CAF045F00E2B0A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FDEAEA01CAF045F00E2B0A3 /* Build configuration list for PBXNativeTarget "PartyStarterUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +524,7 @@
 				2FDEAEA21CAF045F00E2B0A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
