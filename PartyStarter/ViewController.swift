@@ -12,6 +12,9 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    @IBOutlet weak var ContinueButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +57,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("user logged out..")
     }
+    
+    
+    @IBAction func continueToApp(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("showNew", sender: self)        
+    }
+    
 
 }
 
