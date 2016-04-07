@@ -73,6 +73,9 @@ class BViewController: UIViewController {
     }
     
     
+    @IBAction func viewParties(sender: AnyObject) {
+        self.performSegueWithIdentifier("ViewParties", sender: self)
+    }
 
     /*
     // MARK: - Navigation

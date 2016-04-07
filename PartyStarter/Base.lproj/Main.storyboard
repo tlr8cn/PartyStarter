@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -58,15 +58,25 @@
                                     <action selector="startParty:" destination="rSd-8Q-EMP" eventType="touchUpInside" id="TB7-iW-r3f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-bD-Cvc">
+                                <rect key="frame" x="228" y="364" width="144" height="30"/>
+                                <state key="normal" title="View Friends' Parties"/>
+                                <connections>
+                                    <action selector="viewParties:" destination="rSd-8Q-EMP" eventType="touchUpInside" id="V5m-sf-J2t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HIR-bD-Cvc" firstAttribute="top" secondItem="AGK-j3-ZX7" secondAttribute="bottom" constant="39" id="duu-ra-YXh"/>
                             <constraint firstItem="AGK-j3-ZX7" firstAttribute="centerX" secondItem="ZHS-qS-9cP" secondAttribute="centerX" id="qxu-Oa-TTa"/>
+                            <constraint firstItem="HIR-bD-Cvc" firstAttribute="centerX" secondItem="ZHS-qS-9cP" secondAttribute="centerX" id="zXm-b6-Ysf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PartyStarterButton" destination="AGK-j3-ZX7" id="Cxo-if-pgx"/>
                         <segue destination="kvF-iY-zx8" kind="show" identifier="StartParty" id="4bG-Hg-7RE"/>
+                        <segue destination="GuJ-Id-F67" kind="show" identifier="ViewParties" id="Si7-rF-i38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTe-s0-U7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,31 +99,50 @@
                                 <rect key="frame" x="20" y="28" width="560" height="552"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Party Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYO-oz-0y7">
-                                        <rect key="frame" x="129" y="34" width="303" height="30"/>
+                                        <rect key="frame" x="135" y="34" width="291" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add Donation Perks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trU-iR-QWN">
-                                        <rect key="frame" x="199" y="84" width="152" height="21"/>
+                                        <rect key="frame" x="180" y="157" width="152" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-th-LSI">
-                                        <rect key="frame" x="369" y="75" width="30" height="30"/>
+                                        <rect key="frame" x="350" y="148" width="30" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="+"/>
                                         <connections>
                                             <action selector="addDonationPerk:" destination="kvF-iY-zx8" eventType="touchUpInside" id="00o-h8-F8C"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-hj-DWd">
+                                        <rect key="frame" x="135" y="72" width="291" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cv-0P-fOS">
+                                        <rect key="frame" x="316" y="110" width="110" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuy-zM-29i">
+                                        <rect key="frame" x="135" y="110" width="112" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="trU-iR-QWN" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="20" id="05R-Xp-umh"/>
+                                    <constraint firstItem="trU-iR-QWN" firstAttribute="top" secondItem="tuy-zM-29i" secondAttribute="bottom" constant="17" id="2AI-5B-arV"/>
+                                    <constraint firstItem="tWG-hj-DWd" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="8" id="Ai4-iS-EaC"/>
                                     <constraint firstItem="trU-iR-QWN" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="C8A-lT-Z70"/>
                                     <constraint firstItem="Ste-th-LSI" firstAttribute="leading" secondItem="trU-iR-QWN" secondAttribute="trailing" constant="16" id="IpH-64-ggh"/>
-                                    <constraint firstItem="Ste-th-LSI" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="5" id="VLx-iK-Z0h"/>
                                     <constraint firstItem="fYO-oz-0y7" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="bBe-wL-XYh"/>
+                                    <constraint firstItem="2Cv-0P-fOS" firstAttribute="leading" secondItem="tuy-zM-29i" secondAttribute="trailing" constant="91" id="n6X-zc-O1L"/>
+                                    <constraint firstItem="tuy-zM-29i" firstAttribute="top" secondItem="tWG-hj-DWd" secondAttribute="bottom" constant="8" id="qJT-Mj-LFG"/>
+                                    <constraint firstItem="2Cv-0P-fOS" firstAttribute="top" secondItem="tWG-hj-DWd" secondAttribute="bottom" constant="8" id="zaK-0y-DBA"/>
+                                    <constraint firstItem="Ste-th-LSI" firstAttribute="top" secondItem="2Cv-0P-fOS" secondAttribute="bottom" constant="8" id="zzj-Dv-Kid"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -130,6 +159,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVq-xU-MAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1686" y="232"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="fgb-V0-kLg">
+            <objects>
+                <viewController id="GuJ-Id-F67" customClass="MapViewController" customModule="PartyStarter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x5y-Fz-Ybx"/>
+                        <viewControllerLayoutGuide type="bottom" id="n7x-dk-oWn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yEb-RS-I6G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5D4-HY-9Tg">
+                                <rect key="frame" x="137" y="101" width="327" height="398"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5D4-HY-9Tg" firstAttribute="centerY" secondItem="yEb-RS-I6G" secondAttribute="centerY" id="M4X-qs-PFh"/>
+                            <constraint firstItem="5D4-HY-9Tg" firstAttribute="centerX" secondItem="yEb-RS-I6G" secondAttribute="centerX" id="g6d-AR-VXc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapToParty" destination="5D4-HY-9Tg" id="AyR-fH-ZQu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daF-PI-mwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="937"/>
         </scene>
     </scenes>
 </document>

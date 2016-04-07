@@ -55,7 +55,7 @@ class CViewController: UIViewController {
     
     func movePerksDown() {
         
-        var counter = 230
+        var counter = 310
         for subview in self.scrollview.subviews {
             if subview.tag == 10 {
                 subview.center = CGPointMake(275, CGFloat(counter))
@@ -68,7 +68,7 @@ class CViewController: UIViewController {
     
     func moveSubmitButtonDown() {
         
-        var base = 260
+        var base = 340
         for subview in self.scrollview.subviews {
             if subview.tag == 25 {
                 subview.center = CGPointMake(275, CGFloat(base + self.donation_perks.donation_descripts.count*60))
@@ -81,17 +81,17 @@ class CViewController: UIViewController {
         movePerksDown()
 
         
-        let descriptTextField = UITextField(frame: CGRectMake(150, 110, 250, 30))
+        let descriptTextField = UITextField(frame: CGRectMake(150, 190, 250, 30))
         descriptTextField.placeholder = "Donation Perk Description"
         descriptTextField.borderStyle = UITextBorderStyle.RoundedRect
         descriptTextField.tag = 2
         
-        let valueTextField = UITextField(frame: CGRectMake(150, 150, 250, 30))
+        let valueTextField = UITextField(frame: CGRectMake(150, 240, 250, 30))
         valueTextField.placeholder = "Donation Amount for Perk"
         valueTextField.borderStyle = UITextBorderStyle.RoundedRect
         valueTextField.tag = 3
         
-        var donation_button = UIButton(frame: CGRectMake(175, 190, 200, 30))
+        var donation_button = UIButton(frame: CGRectMake(175, 270, 200, 30))
         donation_button.setTitle("Create Perk", forState: UIControlState.Normal)
         donation_button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         donation_button.addTarget(self, action: "addPerkToList", forControlEvents: UIControlEvents.TouchUpInside)
@@ -104,7 +104,7 @@ class CViewController: UIViewController {
     
     func showDonationPerks() {
         
-        var counter = 110.0
+        var counter = 190.0
         
         for var i = 0; i < donation_perks.donation_descripts.count; ++i {
             
@@ -157,7 +157,7 @@ class CViewController: UIViewController {
     
     func showSubmitButton() {
         
-        var base = 130
+        var base = 210
         var submit_button = UIButton(frame: CGRectMake(175, (CGFloat)(base + self.donation_perks.donation_descripts.count*60), 200, 30))
         submit_button.setTitle("Create Party!", forState: UIControlState.Normal)
         submit_button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
