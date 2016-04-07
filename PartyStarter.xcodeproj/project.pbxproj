@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F3EDD671CB5C63B00C41E69 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EDD661CB5C63B00C41E69 /* CViewController.swift */; };
+		2F3EDD691CB5F13F00C41E69 /* DonationPerks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */; };
 		2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE721CAF045F00E2B0A3 /* AppDelegate.swift */; };
 		2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE741CAF045F00E2B0A3 /* ViewController.swift */; };
 		2FDEAE781CAF045F00E2B0A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDEAE761CAF045F00E2B0A3 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		2F3EDD661CB5C63B00C41E69 /* CViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationPerks.swift; sourceTree = "<group>"; };
 		2FDEAE6F1CAF045F00E2B0A3 /* PartyStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDEAE721CAF045F00E2B0A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FDEAE741CAF045F00E2B0A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				2FDEAE791CAF045F00E2B0A3 /* PartyStarter.xcdatamodeld */,
 				82E3E2501CB192B900061C97 /* BViewController.swift */,
 				2F3EDD661CB5C63B00C41E69 /* CViewController.swift */,
+				2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */,
 			);
 			path = PartyStarter;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				2FDEAE7B1CAF045F00E2B0A3 /* PartyStarter.xcdatamodeld in Sources */,
 				82E3E2511CB192B900061C97 /* BViewController.swift in Sources */,
 				2F3EDD671CB5C63B00C41E69 /* CViewController.swift in Sources */,
+				2F3EDD691CB5F13F00C41E69 /* DonationPerks.swift in Sources */,
 				2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */,
 				2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */,
 			);

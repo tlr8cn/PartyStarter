@@ -85,19 +85,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Let's get this party started!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh5-EJ-Ed0">
-                                <rect key="frame" x="192" y="65" width="217" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-6n-0NR">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Party Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYO-oz-0y7">
+                                        <rect key="frame" x="129" y="34" width="303" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add Donation Perks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trU-iR-QWN">
+                                        <rect key="frame" x="199" y="84" width="152" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-th-LSI">
+                                        <rect key="frame" x="367" y="75" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="addDonationPerk:" destination="kvF-iY-zx8" eventType="touchUpInside" id="00o-h8-F8C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="trU-iR-QWN" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="20" id="05R-Xp-umh"/>
+                                    <constraint firstItem="trU-iR-QWN" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="C8A-lT-Z70"/>
+                                    <constraint firstItem="Ste-th-LSI" firstAttribute="leading" secondItem="trU-iR-QWN" secondAttribute="trailing" constant="16" id="IpH-64-ggh"/>
+                                    <constraint firstItem="Ste-th-LSI" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="11" id="VLx-iK-Z0h"/>
+                                    <constraint firstItem="fYO-oz-0y7" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="bBe-wL-XYh"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lh5-EJ-Ed0" firstAttribute="centerX" secondItem="oXY-D7-Tfi" secondAttribute="centerX" id="Wjq-eg-32o"/>
-                            <constraint firstItem="Lh5-EJ-Ed0" firstAttribute="centerX" secondItem="oXY-D7-Tfi" secondAttribute="centerX" id="xQI-aC-zJu"/>
+                            <constraint firstItem="4mo-6n-0NR" firstAttribute="centerX" secondItem="oXY-D7-Tfi" secondAttribute="centerX" id="2Uh-0p-CUk"/>
+                            <constraint firstItem="4mo-6n-0NR" firstAttribute="centerY" secondItem="oXY-D7-Tfi" secondAttribute="centerY" id="9QM-ra-v2H"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollview" destination="4mo-6n-0NR" id="Jp5-J6-6DK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVq-xU-MAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
