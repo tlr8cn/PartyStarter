@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -100,7 +100,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-th-LSI">
-                                        <rect key="frame" x="367" y="75" width="30" height="30"/>
+                                        <rect key="frame" x="369" y="75" width="30" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="+"/>
                                         <connections>
@@ -112,7 +112,7 @@
                                     <constraint firstItem="trU-iR-QWN" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="20" id="05R-Xp-umh"/>
                                     <constraint firstItem="trU-iR-QWN" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="C8A-lT-Z70"/>
                                     <constraint firstItem="Ste-th-LSI" firstAttribute="leading" secondItem="trU-iR-QWN" secondAttribute="trailing" constant="16" id="IpH-64-ggh"/>
-                                    <constraint firstItem="Ste-th-LSI" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="11" id="VLx-iK-Z0h"/>
+                                    <constraint firstItem="Ste-th-LSI" firstAttribute="top" secondItem="fYO-oz-0y7" secondAttribute="bottom" constant="5" id="VLx-iK-Z0h"/>
                                     <constraint firstItem="fYO-oz-0y7" firstAttribute="centerX" secondItem="4mo-6n-0NR" secondAttribute="centerX" id="bBe-wL-XYh"/>
                                 </constraints>
                             </scrollView>

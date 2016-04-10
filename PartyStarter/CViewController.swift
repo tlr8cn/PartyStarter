@@ -62,6 +62,18 @@ class CViewController: UIViewController {
                 counter += 20
             }
         }
+        
+        moveSubmitButtonDown()
+    }
+    
+    func moveSubmitButtonDown() {
+        
+        var base = 260
+        for subview in self.scrollview.subviews {
+            if subview.tag == 25 {
+                subview.center = CGPointMake(275, CGFloat(base + self.donation_perks.donation_descripts.count*60))
+            }
+        }
     }
     
     @IBAction func addDonationPerk(sender: UIButton) {
@@ -136,6 +148,30 @@ class CViewController: UIViewController {
             
             counter += 55.0
         }
+        
+        if donation_perks.donation_descripts.count >= 1 {
+            showSubmitButton()
+        }
+        
     }
     
+    func showSubmitButton() {
+        
+        var base = 130
+        var submit_button = UIButton(frame: CGRectMake(175, (CGFloat)(base + self.donation_perks.donation_descripts.count*60), 200, 30))
+        submit_button.setTitle("Create Party!", forState: UIControlState.Normal)
+        submit_button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        submit_button.addTarget(self, action: "createParty", forControlEvents: UIControlEvents.TouchUpInside)
+        submit_button.tag = 25
+        
+        self.scrollview.addSubview(submit_button)
+    }
+    
+    
+    func createParty() {
+        
+        
+    }
+    
+
 }
