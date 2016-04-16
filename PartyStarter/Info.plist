@@ -2,11 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>PartyStarter would like to use your current location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-    		<string>fbauth2</string>
+		<string>fbauth2</string>
 	</array>
-	
 	<key>FacebookDisplayName</key>
 	<string>PartyStarter</string>
 	<key>FacebookAppID</key>

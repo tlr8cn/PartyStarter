@@ -13,7 +13,7 @@ import MapKit
 var partyRoute : MKRoute?
 
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager =  CLLocationManager()
 
@@ -35,12 +35,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            
         }
 
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]) {
+        
+        print ("HELP ME")
         var userLocation:CLLocation = locations[0] as! CLLocation
         let long = userLocation.coordinate.longitude
         let lat = userLocation.coordinate.latitude
@@ -76,11 +77,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         directions.calculateDirectionsWithCompletionHandler {
             response, error in
             
-            gaurd let response = response else {
+            guard let response = response else {
                 print("there was an error!")
                 return
             }
-            self.routeToParty = response!.routes[0] as? MKRoute
+            self.routeToParty = response.routes[0] as? MKRoute
             self.mapToParty.addOverlay((self.routeToParty?.polyline)!)
             
         }
@@ -89,7 +90,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         
-        var myLineRenderer = MKPolyLineRenderer(polyline: routeToParty?.polyline!)
+        var myLineRenderer = MKPolylineRenderer(polyline: (routeToParty?.polyline)!)
         myLineRenderer.strokeColor = UIColor.redColor()
         myLineRenderer.lineWidth = 3
         return myLineRenderer
