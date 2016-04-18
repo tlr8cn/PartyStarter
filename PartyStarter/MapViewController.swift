@@ -10,7 +10,6 @@ import UIKit
 import CoreLocation
 import MapKit
 
-var partyRoute : MKRoute?
 
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -21,9 +20,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var routeToParty : MKRoute?
     
+    var has_centered = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //ask for authorization from the user
         self.locationManager.requestAlwaysAuthorization()
@@ -36,12 +37,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
 
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]) {
         
-        print ("HELP ME")
         var userLocation:CLLocation = locations[0] as! CLLocation
         let long = userLocation.coordinate.longitude
         let lat = userLocation.coordinate.latitude
@@ -54,14 +55,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapToParty.addAnnotation(currentPoint)
         
         //eventually grab this data from database--hardcoded in for now
-        partyPoint.coordinate = CLLocationCoordinate2DMake(38.394395, -81.896702)
+        partyPoint.coordinate = CLLocationCoordinate2DMake(38.028926, -78.508267)
         partyPoint.title = "Party Location"
         mapToParty.addAnnotation(partyPoint)
         
-        mapToParty.centerCoordinate = partyPoint.coordinate
-        mapToParty.delegate = self
+        if(!has_centered) {
+            mapToParty.centerCoordinate = currentPoint.coordinate
+            mapToParty.delegate = self
         
-        mapToParty.setRegion(MKCoordinateRegionMake(partyPoint.coordinate, MKCoordinateSpanMake(0.7,0.7)), animated: true)
+            mapToParty.setRegion(MKCoordinateRegionMake(currentPoint.coordinate, MKCoordinateSpanMake(0.07,0.07)), animated: true)
+            
+            has_centered = true;
+        }
         
         var directionsRequest = MKDirectionsRequest()
         let currentMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(currentPoint.coordinate.latitude, currentPoint.coordinate.longitude), addressDictionary: nil)
@@ -103,5 +108,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
+    
+    @IBAction func getDirections(sender: AnyObject) {
+        self.performSegueWithIdentifier("GetDirections", sender: self)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GetDirections" {
+            if let DVC = segue.destinationViewController as? DirectionsViewController {
+                DVC.theRoute = routeToParty
+            } else {
+                print("Data NOT Passed!")
+            }
+        } else { print("Id doesnt match with Storyboard segue Id") }
+    }
     
 }

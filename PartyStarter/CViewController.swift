@@ -154,7 +154,7 @@ class CViewController: UIViewController {
         }
         
     }
-    
+    //this is a comment
     func showSubmitButton() {
         
         var base = 210

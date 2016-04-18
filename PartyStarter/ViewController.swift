@@ -33,6 +33,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.view.addSubview(loginButton)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+    
     
 
     override func didReceiveMemoryWarning() {

@@ -20,6 +20,7 @@
 		2FDEAE961CAF045F00E2B0A3 /* PartyStarterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE951CAF045F00E2B0A3 /* PartyStarterUITests.swift */; };
 		2FDEAEA81CAF082E00E2B0A3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */; };
 		2FDEAEAA1CAF084100E2B0A3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */; };
+		823500CF1CC45B34000A1238 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823500CE1CC45B34000A1238 /* DirectionsViewController.swift */; };
 		82E3E2511CB192B900061C97 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3E2501CB192B900061C97 /* BViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		2FDEAE971CAF045F00E2B0A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		823500CE1CC45B34000A1238 /* DirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		82E3E2501CB192B900061C97 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				2F3EDD661CB5C63B00C41E69 /* CViewController.swift */,
 				2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */,
 				2F3EDD721CB62F4900C41E69 /* MapViewController.swift */,
+				823500CE1CC45B34000A1238 /* DirectionsViewController.swift */,
 			);
 			path = PartyStarter;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				82E3E2511CB192B900061C97 /* BViewController.swift in Sources */,
 				2F3EDD671CB5C63B00C41E69 /* CViewController.swift in Sources */,
 				2F3EDD691CB5F13F00C41E69 /* DonationPerks.swift in Sources */,
+				823500CF1CC45B34000A1238 /* DirectionsViewController.swift in Sources */,
 				2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */,
 				2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */,
 				2F3EDD731CB62F4900C41E69 /* MapViewController.swift in Sources */,
@@ -432,10 +436,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PartyStarter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robinson.tyler.PartyStarter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,10 +454,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PartyStarter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robinson.tyler.PartyStarter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
