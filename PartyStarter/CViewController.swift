@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Foundation
+//import Alamofire
+//import swiftMongoDB
 
 class CViewController: UIViewController {
 
@@ -23,8 +26,31 @@ class CViewController: UIViewController {
         
         showDonationPerks();
         
+        //POST Perks to Web Service
+        
+        /*let dateData = ["some_date" : nowISO8601]
+        
+        if NSJSONSerialization.isValidJSONObject(dateData){
+            
+            let url = NSURL(string: "http://localhost:3001/")
+            
+            var request = NSMutableURLRequest(URL: url!)
+            var data = NSJSONSerialization.dataWithJSONObject(dateData, options: nil, error: nil)
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.HTTPMethod = "POST"
+            request.HTTPBody = data
+            
+            let task = session.dataTaskWithRequest(request, completionHandler: nil)
+            
+            task.resume()
+        }*/
         
     }
+    
+    
+    
+    
     
     func addPerkToList() {
         
@@ -43,13 +69,10 @@ class CViewController: UIViewController {
                     let text_field = subview as! UITextField
                     value_input = text_field.text as String!
                 }
-                
                 subview.removeFromSuperview()
             }
         }
         
-        donation_perks.addDonationPerk(descript_input, value: value_input)
-        showDonationPerks()
         
     }
     
@@ -170,8 +193,60 @@ class CViewController: UIViewController {
     
     func createParty() {
         
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        //config.HTTPAdditionalHeaders = [""]
+        let session = NSURLSession(configuration: config)
+        let reqEndpoint: String = "http://localhost:3001/items/"
+        guard let reqURL = NSURL(string: reqEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        let reqURLRequest = NSMutableURLRequest(URL: reqURL)
+        reqURLRequest.HTTPMethod = "POST"
+        let newposreq = ["Perk Title": descript_input, "Perk": value_input]
+        let jsonReq: NSData
+        do{
+            jsonReq = try NSJSONSerialization.dataWithJSONObject(newposreq, options: [])
+            reqURLRequest.HTTPBody = jsonReq
+        } catch {
+            print("Error: cannot create JSON")
+            return
+        }
+        donation_perks.addDonationPerk(descript_input, value: value_input)
+        showDonationPerks()
+        
+        let task = session.dataTaskWithRequest(reqURLRequest, completionHandler:{ _, _, _ in })
+        task.resume()
+        
         
     }
+    
+    /*
+    
+    func downloadAndUpdate() {
+        request(.GET, "https://rocky-meadow-1164.herokuapp.com/todo") .responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                self.jsonArray = JSON as? NSMutableArray
+                for item in self.jsonArray! {
+                    print(item["name"]!)
+                    let string = item["name"]!
+                    print("String is \(string!)")
+                    
+                    self.newArray.append(string! as! String)
+                }
+                print("New array is \(self.newArray)")
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    */
+    
     
 
 }

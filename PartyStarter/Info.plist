@@ -2,11 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>Allow Arbitrary Loads</key>
+		<true/>
+	</dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-    		<string>fbauth2</string>
+		<string>fbauth2</string>
 	</array>
-	
 	<key>FacebookDisplayName</key>
 	<string>PartyStarter</string>
 	<key>FacebookAppID</key>

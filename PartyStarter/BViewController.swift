@@ -59,6 +59,41 @@ class BViewController: UIViewController {
             temp_label.text = "Log in to Facebook to invite friends!"
             self.view.addSubview(temp_label)
         }
+        
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(NSMutableURLRequest(URL: NSURL(string: "http://localhost:3001/items/5702f996490930636e221f6f")!)) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                
+                do{
+                    
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+                    
+                    if let name = json["title"] as? String {
+                        NSLog(name)
+                        var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
+                        label.center = CGPointMake(160, 360)
+                        label.textAlignment = NSTextAlignment.Center
+                        label.text = name
+                        self.view.addSubview(label)
+                    }
+                    
+                }catch {
+                    print("Error with Json: \(error)")
+                    
+                }
+                
+            }
+            
+        }
+        task.resume()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,5 +118,7 @@ class BViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

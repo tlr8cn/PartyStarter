@@ -19,6 +19,7 @@
 		2FDEAE961CAF045F00E2B0A3 /* PartyStarterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE951CAF045F00E2B0A3 /* PartyStarterUITests.swift */; };
 		2FDEAEA81CAF082E00E2B0A3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */; };
 		2FDEAEAA1CAF084100E2B0A3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */; };
+		752BE8231CC2F23100E31649 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 752BE8221CC2F23100E31649 /* Source */; };
 		82E3E2511CB192B900061C97 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E3E2501CB192B900061C97 /* BViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		2FDEAE971CAF045F00E2B0A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FDEAEA71CAF082E00E2B0A3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		2FDEAEA91CAF084100E2B0A3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		752BE8221CC2F23100E31649 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
 		82E3E2501CB192B900061C97 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 		2FDEAE711CAF045F00E2B0A3 /* PartyStarter */ = {
 			isa = PBXGroup;
 			children = (
+				752BE8221CC2F23100E31649 /* Source */,
 				2FDEAE721CAF045F00E2B0A3 /* AppDelegate.swift */,
 				2FDEAE741CAF045F00E2B0A3 /* ViewController.swift */,
 				2FDEAE761CAF045F00E2B0A3 /* Main.storyboard */,
@@ -252,6 +255,7 @@
 				2FDEAE801CAF045F00E2B0A3 /* LaunchScreen.storyboard in Resources */,
 				2FDEAE7D1CAF045F00E2B0A3 /* Assets.xcassets in Resources */,
 				2FDEAE781CAF045F00E2B0A3 /* Main.storyboard in Resources */,
+				752BE8231CC2F23100E31649 /* Source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
