@@ -291,8 +291,14 @@ class CViewController: UIViewController {
         }
         let reqURLRequest = NSMutableURLRequest(URL: reqURL)
         reqURLRequest.HTTPMethod = "POST"
-        var newposreq = ["PartyTitle":title, "PartyAddress":addr, "PartyZip":zip, "PartyState":state]
-        let npdict =  newposreq as! NSDictionary
+        var npdict : [String: AnyObject] = [:]
+        npdict["Party Title"] = title
+        npdict["Party Address"] = addr
+        npdict["Party Zip"] = zip
+        npdict["Party State"] = state
+        
+        //var newposreq = ["PartyTitle":title, "PartyAddress":addr, "PartyZip":zip, "PartyState":state]
+        //let npdict =  newposreq as! NSDictionary
         
         let jsonReq: NSData
         do{

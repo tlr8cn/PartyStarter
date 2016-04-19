@@ -69,31 +69,62 @@ class BViewController: UIViewController {
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
-                
                 do{
+                    let jsp:NSArray = try! NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments) as! NSArray
+                    for var i in 0...jsp.count-1 {
+                    if let name = jsp[i] as? NSDictionary {
+                        var keyray:NSArray = Array(name.allKeys)
+                        let info = keyray[0]
+                        print(info)
+                        var counter = 360.0
+                        //var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
+                        //var label2 = UILabel(frame: CGRectMake(0, 0, 400, 21))
+                        var label3 = UILabel(frame: CGRectMake(0, 300, 400, 400))
+                        //var label4 = UILabel(frame: CGRectMake(0, 0, 400, 21))
+                        var separator = UILabel(frame: CGRectMake(0, 0, 400, 21))
+                        
+                        //label.center = CGPointMake(160, CGFloat(counter+15))
+                        //label.textAlignment = NSTextAlignment.Center
+                        
+                        //label2.center = CGPointMake(160, CGFloat(counter+30))
+                        //label2.textAlignment = NSTextAlignment.Center
+                        
+                        label3.center = CGPointMake(160, CGFloat(counter+150))
+                        label3.textAlignment = NSTextAlignment.Center
+                        label3.lineBreakMode = .ByWordWrapping
+                        label3.numberOfLines = 6
+                        
+                        //label4.center = CGPointMake(160, CGFloat(counter+70))
+                        //label4.textAlignment = NSTextAlignment.Center
                     
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                    
-                    if let name = json[["Party Title\'"]] as? String {
-                        print(name)
-                        var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
-                        label.center = CGPointMake(160, 360)
-                        label.textAlignment = NSTextAlignment.Center
-                        label.text = name
-                        self.view.addSubview(label)
+                        separator.center = CGPointMake(160, CGFloat(counter+160))
+                        separator.textAlignment = NSTextAlignment.Center
+                        //var title = info["Party Title"]
+                        //var addr = info["Party Addr"]
+                        //var state = info.indexAtPosition(0)
+                        //var zip = info["Party Zip"]
+                        //label.text = title as! String
+                      //  label2.text = addr as! String
+                        label3.text = info.stringByReplacingOccurrencesOfString("}", withString: "") as! String
+                        //label4.text = zip as! String
+                        separator.text = "__________________________"
+                        //self.view.addSubview(label)
+                        //self.view.addSubview(label2)
+                        self.view.addSubview(label3)
+                        //self.view.addSubview(label4)
+                        self.view.addSubview(separator)
+                        counter += 100.0
                     }
-                    
-                }catch {
+                }
+                
+            }catch {
                     print("Error with Json: \(error)")
                     
                 }
-                
             }
-            
         }
+            
         task.resume()
-
-        
     }
 
     override func didReceiveMemoryWarning() {
