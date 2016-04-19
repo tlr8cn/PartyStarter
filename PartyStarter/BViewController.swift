@@ -62,7 +62,7 @@ class BViewController: UIViewController {
         
         
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(NSMutableURLRequest(URL: NSURL(string: "http://localhost:3001/items/5702f996490930636e221f6f")!)) {
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(NSMutableURLRequest(URL: NSURL(string: "http://localhost:3001/items")!)) {
             (data, response, error) -> Void in
             
             let httpResponse = response as! NSHTTPURLResponse
@@ -74,8 +74,8 @@ class BViewController: UIViewController {
                     
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
                     
-                    if let name = json["title"] as? String {
-                        NSLog(name)
+                    if let name = json[["Party Title\'"]] as? String {
+                        print(name)
                         var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
                         label.center = CGPointMake(160, 360)
                         label.textAlignment = NSTextAlignment.Center
@@ -92,7 +92,7 @@ class BViewController: UIViewController {
             
         }
         task.resume()
-        
+
         
     }
 
@@ -108,6 +108,9 @@ class BViewController: UIViewController {
     }
     
     
+    @IBAction func viewParties(sender: AnyObject) {
+        self.performSegueWithIdentifier("ViewParties", sender: self)
+    }
 
     /*
     // MARK: - Navigation
