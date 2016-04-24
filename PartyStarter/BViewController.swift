@@ -74,8 +74,16 @@ class BViewController: UIViewController {
                     for var i in 0...jsp.count-1 {
                     if let name = jsp[i] as? NSDictionary {
                         var keyray:NSArray = Array(name.allKeys)
-                        let info = keyray[0]
-                        print(info)
+                        
+                        let info: NSDictionary
+                        do{
+                            var jsdata = keyray[0].dataUsingEncoding(NSUTF8StringEncoding,allowLossyConversion: false)
+                            info = try NSJSONSerialization.JSONObjectWithData(jsdata!, options: []) as! NSDictionary} catch{
+                                return
+                        }
+                        /*let tex = info["Party Title"]!.stringByReplacingOccurrencesOfString("}", withString: "") as! String
+                        print(tex)*/
+                        print(info["Party Title"] as! String)
                         var counter = 360.0
                         //var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
                         //var label2 = UILabel(frame: CGRectMake(0, 0, 400, 21))
@@ -105,7 +113,7 @@ class BViewController: UIViewController {
                         //var zip = info["Party Zip"]
                         //label.text = title as! String
                       //  label2.text = addr as! String
-                        label3.text = info.stringByReplacingOccurrencesOfString("}", withString: "") as! String
+                        label3.text = info["Party Title"] as! String
                         //label4.text = zip as! String
                         separator.text = "__________________________"
                         //self.view.addSubview(label)
@@ -141,6 +149,16 @@ class BViewController: UIViewController {
     
     @IBAction func viewParties(sender: AnyObject) {
         self.performSegueWithIdentifier("ViewParties", sender: self)
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            print("Shaken")
+        }
     }
 
     /*
