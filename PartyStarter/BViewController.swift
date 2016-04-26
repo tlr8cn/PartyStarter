@@ -71,6 +71,8 @@ class BViewController: UIViewController {
             if (statusCode == 200) {
                 do{
                     let jsp:NSArray = try! NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments) as! NSArray
+                    
+                    if(jsp.count > 0) {
                     for var i in 0...jsp.count-1 {
                     if let name = jsp[i] as? NSDictionary {
                         var keyray:NSArray = Array(name.allKeys)
@@ -123,6 +125,7 @@ class BViewController: UIViewController {
                         self.view.addSubview(separator)
                         counter += 100.0
                     }
+                }
                 }
                 
             }catch {

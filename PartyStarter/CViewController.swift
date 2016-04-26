@@ -242,9 +242,11 @@ class CViewController: UIViewController {
     
     
     
-    
+
     
     func createParty() {
+        
+        print("In the function")
         
         var title = ""
         var addr = ""
