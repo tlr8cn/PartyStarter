@@ -77,7 +77,7 @@
                     <connections>
                         <outlet property="PartyStarterButton" destination="AGK-j3-ZX7" id="Cxo-if-pgx"/>
                         <segue destination="kvF-iY-zx8" kind="show" identifier="StartParty" id="4bG-Hg-7RE"/>
-                        <segue destination="GuJ-Id-F67" kind="show" identifier="ViewParties" id="Si7-rF-i38"/>
+                        <segue destination="uTc-Xg-0dN" kind="show" identifier="ViewParties" id="NQv-mV-Kod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTe-s0-U7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +166,27 @@
             </objects>
             <point key="canvasLocation" x="2498" y="232"/>
         </scene>
+        <!--Party List View Controller-->
+        <scene sceneID="VO8-IV-dhq">
+            <objects>
+                <viewController id="uTc-Xg-0dN" customClass="PartyListViewController" customModule="PartyStarter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="feB-GY-FuD"/>
+                        <viewControllerLayoutGuide type="bottom" id="syE-iG-CPd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zvn-6T-Hs4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="HKN-yH-YH9" kind="show" identifier="PartyDetails" id="8wS-Gr-XSs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ygd-dw-OIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="990"/>
+        </scene>
         <!--Map View Controller-->
         <scene sceneID="fgb-V0-kLg">
             <objects>
@@ -207,7 +228,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daF-PI-mwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="937"/>
+            <point key="canvasLocation" x="1564" y="990"/>
+        </scene>
+        <!--Party Details View Controller-->
+        <scene sceneID="AuM-7W-NNj">
+            <objects>
+                <viewController id="HKN-yH-YH9" customClass="PartyDetailsViewController" customModule="PartyStarter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Nv-ad-rK8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rQn-bB-ViI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gOB-Np-mb7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="GuJ-Id-F67" kind="show" identifier="ViewRoute" id="TnF-yZ-B2s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFg-L8-EHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="1717"/>
         </scene>
         <!--Directions View Controller-->
         <scene sceneID="HGq-A6-evc">
@@ -233,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dq1-P4-A5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="937"/>
+            <point key="canvasLocation" x="2235" y="990"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Edo-GT-NH0">

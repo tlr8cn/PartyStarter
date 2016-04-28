@@ -10,6 +10,8 @@
 		2F3EDD671CB5C63B00C41E69 /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EDD661CB5C63B00C41E69 /* CViewController.swift */; };
 		2F3EDD691CB5F13F00C41E69 /* DonationPerks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */; };
 		2F3EDD731CB62F4900C41E69 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3EDD721CB62F4900C41E69 /* MapViewController.swift */; };
+		2F5C6BF61CD2AD4C003C07E1 /* PartyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C6BF51CD2AD4C003C07E1 /* PartyListViewController.swift */; };
+		2F5C6BFA1CD2B09E003C07E1 /* PartyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5C6BF91CD2B09E003C07E1 /* PartyDetailsViewController.swift */; };
 		2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE721CAF045F00E2B0A3 /* AppDelegate.swift */; };
 		2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEAE741CAF045F00E2B0A3 /* ViewController.swift */; };
 		2FDEAE781CAF045F00E2B0A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDEAE761CAF045F00E2B0A3 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		2F3EDD661CB5C63B00C41E69 /* CViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
 		2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonationPerks.swift; sourceTree = "<group>"; };
 		2F3EDD721CB62F4900C41E69 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2F5C6BF51CD2AD4C003C07E1 /* PartyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyListViewController.swift; sourceTree = "<group>"; };
+		2F5C6BF91CD2B09E003C07E1 /* PartyDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDetailsViewController.swift; sourceTree = "<group>"; };
 		2FDEAE6F1CAF045F00E2B0A3 /* PartyStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDEAE721CAF045F00E2B0A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FDEAE741CAF045F00E2B0A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				2F3EDD681CB5F13F00C41E69 /* DonationPerks.swift */,
 				2F3EDD721CB62F4900C41E69 /* MapViewController.swift */,
 				823500CE1CC45B34000A1238 /* DirectionsViewController.swift */,
+				2F5C6BF51CD2AD4C003C07E1 /* PartyListViewController.swift */,
+				2F5C6BF91CD2B09E003C07E1 /* PartyDetailsViewController.swift */,
 			);
 			path = PartyStarter;
 			sourceTree = "<group>";
@@ -286,10 +292,12 @@
 				2FDEAE7B1CAF045F00E2B0A3 /* PartyStarter.xcdatamodeld in Sources */,
 				82E3E2511CB192B900061C97 /* BViewController.swift in Sources */,
 				2F3EDD671CB5C63B00C41E69 /* CViewController.swift in Sources */,
+				2F5C6BF61CD2AD4C003C07E1 /* PartyListViewController.swift in Sources */,
 				2F3EDD691CB5F13F00C41E69 /* DonationPerks.swift in Sources */,
 				823500CF1CC45B34000A1238 /* DirectionsViewController.swift in Sources */,
 				2FDEAE751CAF045F00E2B0A3 /* ViewController.swift in Sources */,
 				2FDEAE731CAF045F00E2B0A3 /* AppDelegate.swift in Sources */,
+				2F5C6BFA1CD2B09E003C07E1 /* PartyDetailsViewController.swift in Sources */,
 				2F3EDD731CB62F4900C41E69 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
