@@ -9,12 +9,13 @@
 import UIKit
 import Foundation
 import CoreLocation
+import CoreData
 
 //import Alamofire
 //import swiftMongoDB
 
 class CViewController: UIViewController {
-
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     @IBOutlet weak var scrollview: UIScrollView!
 
     @IBOutlet weak var PartyTitle: UITextField!
@@ -283,7 +284,12 @@ class CViewController: UIViewController {
         */
         
         
+        let newItem = NSEntityDescription.insertNewObjectForEntityForName("Party", inManagedObjectContext: managedObjectContext) as! Party
         
+        newItem.title = title
+        newItem.address = addr
+        newItem.state = state
+        newItem.zip = zip
         
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         //config.HTTPAdditionalHeaders = [""]
