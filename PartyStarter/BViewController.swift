@@ -30,7 +30,7 @@ class BViewController: UIViewController {
                 var data : NSArray = resultdict.objectForKey("data") as! NSArray
             
                 var label = UILabel(frame: CGRectMake(0, 0, 400, 21))
-                label.center = CGPointMake(160, 60)
+                label.center = CGPointMake(160, 90)
                 label.textAlignment = NSTextAlignment.Center
                 label.text = "Invite your friends to a party!"
                 self.view.addSubview(label)
@@ -38,7 +38,7 @@ class BViewController: UIViewController {
                 for (var i = 0; i < data.count; i++) {
                 
                     var temp_label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-                    temp_label.center = CGPointMake(160, (CGFloat)(60 + (i+1)*30))
+                    temp_label.center = CGPointMake(160, (CGFloat)(90 + (i+1)*30))
                     temp_label.textAlignment = NSTextAlignment.Center
                     temp_label.text = data[i].valueForKey("name") as! String
                     self.view.addSubview(temp_label)
@@ -54,7 +54,7 @@ class BViewController: UIViewController {
             // Do any additional setup after loading the view.
         } else {
             var temp_label = UILabel(frame: CGRectMake(0, 0, 300, 21))
-            temp_label.center = CGPointMake(160, (CGFloat)(60 + 30))
+            temp_label.center = CGPointMake(160, (CGFloat)(90 + 30))
             temp_label.textAlignment = NSTextAlignment.Center
             temp_label.text = "Log in to Facebook to invite friends!"
             self.view.addSubview(temp_label)

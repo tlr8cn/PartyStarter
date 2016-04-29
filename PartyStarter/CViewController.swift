@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+import CoreLocation
+
 //import Alamofire
 //import swiftMongoDB
 
@@ -286,7 +288,7 @@ class CViewController: UIViewController {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         //config.HTTPAdditionalHeaders = [""]
         let session = NSURLSession(configuration: config)
-        let reqEndpoint: String = "http://localhost:3001/items/"
+        let reqEndpoint: String = "http://party-780753853.us-east-1.elb.amazonaws.com/items"
         guard let reqURL = NSURL(string: reqEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -315,34 +317,13 @@ class CViewController: UIViewController {
         task.resume()
         
         
-    }
-    
-    /*
-    
-    func downloadAndUpdate() {
-        request(.GET, "https://rocky-meadow-1164.herokuapp.com/todo") .responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                self.jsonArray = JSON as? NSMutableArray
-                for item in self.jsonArray! {
-                    print(item["name"]!)
-                    let string = item["name"]!
-                    print("String is \(string!)")
-                    
-                    self.newArray.append(string! as! String)
-                }
-                print("New array is \(self.newArray)")
-                self.tableView.reloadData()
-            }
-        }
+        //take out perks before the segue
+        donation_perks.donation_descripts.removeAll()
+        donation_perks.donation_values.removeAll()
+        navigationController?.popViewControllerAnimated(true)
+        
         
     }
-    */
-    
     
 
 }

@@ -11,7 +11,6 @@ import CoreLocation
 import MapKit
 
 
-
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let locationManager =  CLLocationManager()
@@ -22,8 +21,29 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var has_centered = false;
     
+    
+    var party_long : CLLocationDegrees?
+    
+    var party_lat : CLLocationDegrees?
+    
+    /*
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+ */
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(partyAddress)
+        print(partyTitle)
+        
+        streetAddressToCoordinates(partyAddress!)
         
         
         //ask for authorization from the user
@@ -55,7 +75,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapToParty.addAnnotation(currentPoint)
         
         //eventually grab this data from database--hardcoded in for now
-        partyPoint.coordinate = CLLocationCoordinate2DMake(38.028926, -78.508267)
+        partyPoint.coordinate = CLLocationCoordinate2DMake(party_lat!, party_long!)
         partyPoint.title = "Party Location"
         mapToParty.addAnnotation(partyPoint)
         
@@ -123,5 +143,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         } else { print("Id doesnt match with Storyboard segue Id") }
     }
+    
+    
+    func streetAddressToCoordinates(address : String) {
+        
+        var geocoder = CLGeocoder()
+        
+        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+            
+                if((error) != nil) {
+                    print("Error: ", error)
+                }
+                if let placemark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    self.party_lat = coordinates.latitude
+                    self.party_long = coordinates.longitude
+                    
+                    
+                }
+        
+            })
+    }
+    
     
 }

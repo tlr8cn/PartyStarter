@@ -177,9 +177,18 @@
                     <view key="view" contentMode="scaleToFill" id="Zvn-6T-Hs4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ie6-7F-eOf">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ie6-7F-eOf" firstAttribute="centerX" secondItem="Zvn-6T-Hs4" secondAttribute="centerX" id="RFb-by-v8D"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollview" destination="Ie6-7F-eOf" id="a7L-tl-LtV"/>
                         <segue destination="HKN-yH-YH9" kind="show" identifier="PartyDetails" id="8wS-Gr-XSs"/>
                     </connections>
                 </viewController>
@@ -241,9 +250,31 @@
                     <view key="view" contentMode="scaleToFill" id="gOB-Np-mb7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-Bu-1Bh">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="If You're Attending, Shake It!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDH-5N-oLQ">
+                                        <rect key="frame" x="161" y="269" width="239" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yDH-5N-oLQ" firstAttribute="centerX" secondItem="nPZ-Bu-1Bh" secondAttribute="centerX" id="Hqe-Oa-uHv"/>
+                                    <constraint firstItem="yDH-5N-oLQ" firstAttribute="centerY" secondItem="nPZ-Bu-1Bh" secondAttribute="centerY" id="PaY-lb-nl0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nPZ-Bu-1Bh" firstAttribute="centerX" secondItem="gOB-Np-mb7" secondAttribute="centerX" id="bnq-nV-qbP"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="scrollview" destination="nPZ-Bu-1Bh" id="rXY-XM-NJE"/>
+                        <outlet property="shakeLabel" destination="yDH-5N-oLQ" id="0SG-iM-QfA"/>
                         <segue destination="GuJ-Id-F67" kind="show" identifier="ViewRoute" id="TnF-yZ-B2s"/>
                     </connections>
                 </viewController>
