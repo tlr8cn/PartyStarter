@@ -26,6 +26,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var party_lat : CLLocationDegrees?
     
+    var directionsRequest = MKDirectionsRequest()
+    
     /*
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -43,6 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print(partyAddress)
         print(partyTitle)
         
+
         streetAddressToCoordinates(partyAddress!)
         
         
@@ -68,16 +71,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let lat = userLocation.coordinate.latitude
         
         var currentPoint = MKPointAnnotation()
-        var partyPoint = MKPointAnnotation()
+        
     
         currentPoint.coordinate = CLLocationCoordinate2DMake(lat, long)
         currentPoint.title = "Your Location"
         mapToParty.addAnnotation(currentPoint)
         
         //eventually grab this data from database--hardcoded in for now
-        partyPoint.coordinate = CLLocationCoordinate2DMake(party_lat!, party_long!)
-        partyPoint.title = "Party Location"
-        mapToParty.addAnnotation(partyPoint)
         
         if(!has_centered) {
             mapToParty.centerCoordinate = currentPoint.coordinate
@@ -88,12 +88,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             has_centered = true;
         }
         
-        var directionsRequest = MKDirectionsRequest()
+        
         let currentMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(currentPoint.coordinate.latitude, currentPoint.coordinate.longitude), addressDictionary: nil)
-        let partyMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(partyPoint.coordinate.latitude, partyPoint.coordinate.longitude), addressDictionary: nil)
+
         
         directionsRequest.source = MKMapItem(placemark: currentMark)
-        directionsRequest.destination = MKMapItem(placemark: partyMark)
+        
         
         directionsRequest.transportType = .Automobile
         
@@ -146,23 +146,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     func streetAddressToCoordinates(address : String) {
-        
         var geocoder = CLGeocoder()
         
-        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+        geocoder.geocodeAddressString(partyAddress!, completionHandler: {(placemarks, error) -> Void in
             
-                if((error) != nil) {
-                    print("Error: ", error)
-                }
-                if let placemark = placemarks?.first {
-                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
-                    self.party_lat = coordinates.latitude
-                    self.party_long = coordinates.longitude
-                    
-                    
-                }
-        
-            })
+            if((error) != nil) {
+                print("Error: ", error)
+            }
+            if let placemark = placemarks?.first {
+                let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                self.party_lat = coordinates.latitude
+                self.party_long = coordinates.longitude
+                
+                print(self.party_lat)
+                print (self.party_long)
+                var partyPoint = MKPointAnnotation()
+                
+                partyPoint.coordinate = CLLocationCoordinate2DMake(self.party_lat!, self.party_long!)
+                partyPoint.title = "Party Location"
+                self.mapToParty.addAnnotation(partyPoint)
+
+                
+                let partyMark = MKPlacemark(coordinate: CLLocationCoordinate2DMake(partyPoint.coordinate.latitude, partyPoint.coordinate.longitude), addressDictionary: nil)
+                self.directionsRequest.destination = MKMapItem(placemark: partyMark)
+                
+            }
+            
+        })
     }
     
     

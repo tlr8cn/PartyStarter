@@ -60,7 +60,7 @@ class BViewController: UIViewController {
             self.view.addSubview(temp_label)
         }
         
-        
+        /*
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(NSMutableURLRequest(URL: NSURL(string: "http://localhost:3001/items")!)) {
             (data, response, error) -> Void in
@@ -135,7 +135,7 @@ class BViewController: UIViewController {
             }
         }
             
-        task.resume()
+        task.resume()*/
     }
 
     override func didReceiveMemoryWarning() {
